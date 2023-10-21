@@ -1,0 +1,48 @@
+###Recuperar todas la películas
+GET http://localhost:1234/movies
+
+###Recuperar películas por ID
+
+### Con id UUID
+### GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+## Para MySql con MariaDB
+GET http://localhost:1234/movies/26
+###Recuperar peliculas por género
+GET http://localhost:1234/movies?genre=Action
+
+###Crear una película
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "sql": "SELECT* FROM users",
+  "title": "The Godfather",
+  "year": 1975,
+  "director": "Francis Ford Coppola",
+  "duration": 175,
+  "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+  "genre": [
+    "Crime",
+    "Drama"
+  ]
+}
+
+# {
+#   "title": 1,
+#   "year": "adad"
+# }
+
+### Borrar una película
+DELETE http://localhost:1234/movies/24
+
+### Actualizar una película
+PATCH http://localhost:1234/movies/26
+Content-Type: application/json
+
+{
+  "year": 1996,
+  "genre": [
+    "Action"
+  ]
+}
